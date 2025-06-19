@@ -1,10 +1,10 @@
-enum ROLES { // Se recomienda usar en mayúsculas para los enums
+export enum ROLES { // Se recomienda usar en mayúsculas para los enums
 	ADMIN = 'admin',
 	SELLER = 'seller',
 	CUSTOMER = 'customer',
 }
 
-type User = {
+export type User = {
 	username: string;
 	role: ROLES;
 };
