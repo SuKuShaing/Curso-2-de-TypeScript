@@ -30,7 +30,7 @@ export const addProduct = (data: createProductDto): Product => {
 };
 
 // Método para actualizar un producto
-export const updateProduct = (id: string, changes: UpdateProductoDto): Product => {
+export const updateProduct = (id: Product['id'], changes: UpdateProductoDto): Product => {  // Product['id'] es para que el id sea el mismo que está en la interface Product
 	const index = products.findIndex((product) => product.id === id);
 	if (index === -1) {
 		throw new Error('Product not found');
