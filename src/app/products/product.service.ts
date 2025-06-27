@@ -46,5 +46,9 @@ export const updateProduct = (id: Product['id'], changes: UpdateProductoDto): Pr
 export const findProducts = (dto: FindProductoDto) : Product[] => {
 	// code
 	// dto.color = 'blue'; // ahora no se puede modificar los valores que envíen por ser readonly
+
+	// dto.tags = []; // no se puede modificar los valores que envíen por ser readonly, pero sí se puede modificar el array
+	// dto.tags?.pop(); // ahora por ser ReadonlyArray no se puede modificar el array
+	// dto.tags?.push('new tag'); // ahora por ser ReadonlyArray no se puede modificar el array
 	return products;
 };

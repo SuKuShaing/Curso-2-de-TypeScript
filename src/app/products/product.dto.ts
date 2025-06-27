@@ -21,5 +21,9 @@ type UpdateProductoDto2 = Required<Product>;
 // Readonly es para que todos los campos sean readonly
 type example3 = Readonly<Product>;
 
-export interface FindProductoDto extends Readonly<Partial<Product>> {};
+export interface FindProductoDto extends Readonly<Partial<Omit<Product, "tags">>> {
+	readonly tags: ReadonlyArray<string>;
+    // ReadonlyArray es para que no se pueda modificar ni mutar el array
+    // readonly es para no poder cambiar por otro array completamente diferente
+}
 
