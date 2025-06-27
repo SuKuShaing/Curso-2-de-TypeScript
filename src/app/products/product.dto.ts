@@ -18,3 +18,8 @@ export interface UpdateProductoDto extends Partial<createProductDto> {}; // de e
 // Required es para que todos los campos sean obligatorios
 type UpdateProductoDto2 = Required<Product>;
 
+// Readonly es para que todos los campos sean readonly
+type example3 = Readonly<Product>;
+
+export interface FindProductoDto extends Readonly<Partial<Product>> {};
+

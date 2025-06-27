@@ -1,9 +1,10 @@
 import { Product } from './product.model';
-import { createProductDto, UpdateProductoDto } from './product.dto';
+import { createProductDto, FindProductoDto, UpdateProductoDto } from './product.dto';
 import { faker } from '@faker-js/faker';
 
 export const products: Product[] = [];
 
+// Método para añadir un producto
 export const addProduct = (data: createProductDto): Product => {
 	// data.id = "1"; // lanza error por ser readonly
 	// data.createdAt = new Date(); // lanza error por ser readonly
@@ -28,6 +29,7 @@ export const addProduct = (data: createProductDto): Product => {
 	return newProduct;
 };
 
+// Método para actualizar un producto
 export const updateProduct = (id: string, changes: UpdateProductoDto): Product => {
 	const index = products.findIndex((product) => product.id === id);
 	if (index === -1) {
@@ -38,4 +40,11 @@ export const updateProduct = (id: string, changes: UpdateProductoDto): Product =
 		...changes,
 	};
 	return products[index];
+};
+
+// Método para buscar un producto
+export const findProducts = (dto: FindProductoDto) : Product[] => {
+	// code
+	// dto.color = 'blue'; // ahora no se puede modificar los valores que envíen por ser readonly
+	return products;
 };
