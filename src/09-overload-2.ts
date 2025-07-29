@@ -3,9 +3,10 @@
 // Seba => [S, e, b, a] => string => string[] // se le pasa un string y devuelve un array de ese string
 // [S, e, b, a] => Seba => string[] => string // se le pasa un array de strings y devuelve un string
 
-export function parseStr(input: string): string[]; // tipamos la salida en función de la entrada, esto es la sobrecarga de funciones
-export function parseStr(input: string[]): string; // Segundo caso de tipeo en el otro caso
-export function parseStr(input: number): boolean; // tercer caso de tipeo en el otro caso
+// tipamos la salida en función de la entrada, esto es la sobrecarga de funciones
+export function parseStr(input: string): string[];  // tipamos la salida en función de la entrada, esto es la sobrecarga de funciones
+export function parseStr(input: string[]): string;  // Segundo caso de tipeo en el otro caso
+export function parseStr(input: number): boolean;   // tercer caso de tipeo en el otro caso
 
 // export function parseStr(input : string | string[]): string | string[] {
 //     if (Array.isArray(input)) {
@@ -29,8 +30,8 @@ const rtaArray = parseStr("Seba");
 const rtaString = parseStr(["S", "e", "b", "a"]);
 const rtaNumber = parseStr(123);
 
-console.log("Envíe un string: seba =>", rtaString);
-console.log("Envíe un array: [S, e, b, a] =>", rtaArray);
+console.log("Envíe un string: seba =>", rtaArray);
+console.log("Envíe un array: [S, e, b, a] =>", rtaString);
 console.log("Envíe un número: 123 =>", rtaNumber);
 
 const reverse = rtaArray.reverse();  // antes de sobrecargar la función se debían hacer las validaciones

@@ -5,17 +5,17 @@ const currentUser: User = {
     role: ROLES.CUSTOMER,
 };
 
-export const checkAdminRole = () => {  // la función solo verifica si el usuario es admin
+export const checkAdminRole = (): boolean => {  // la función solo verifica si el usuario es admin
     if (currentUser.role === ROLES.ADMIN) {
         return true;
     }
     return false;
-}
+};
 
 console.log(`el usuario ${currentUser.username} tiene el rol de ${currentUser.role}`);
 console.log("checkAdminRole()", checkAdminRole());
 
-export const checkRole = (role1: string, role2: string) => {  // la función verifica si el usuario es admin o seller, es fija
+export const checkRole = (role1: string, role2: string): boolean => {  // la función verifica si el usuario es admin o seller, es fija
     if (currentUser.role === role1) {
         return true;
     }
@@ -23,26 +23,26 @@ export const checkRole = (role1: string, role2: string) => {  // la función ver
         return true;
     }
     return false;
-}
+};
 
 console.log("checkRole()", checkRole(ROLES.ADMIN, ROLES.SELLER));
 
 
-export const checkRoleV2 = (roles: string[]) => {  // el roles es un array de strings y debe ser enviado como un array de argumentos
+export const checkRoleV2 = (roles: string[]): boolean => {  // el roles es un array de strings y debe ser enviado como un array de argumentos
     if (roles.includes(currentUser.role)) {
         return true;
     }
     return false;
-}
+};
 
 console.log("checkRoleV2()", checkRoleV2([ROLES.ADMIN, ROLES.SELLER]));
 
 
-export const checkRoleV3 = (...roles: string[]) => {  // el ...roles es un parámetro rest que agrupa todos los argumentos en un array
+export const checkRoleV3 = (...roles: string[]): boolean => {  // el ...roles es un parámetro rest que agrupa todos los argumentos en un array
     if (roles.includes(currentUser.role)) {
         return true;
     }
     return false;
-}
+};
 
 console.log("checkRoleV3()", checkRoleV3(ROLES.ADMIN, ROLES.SELLER, ROLES.CUSTOMER));

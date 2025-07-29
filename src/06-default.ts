@@ -27,3 +27,6 @@ console.log(p5);
 
 const p6 = createProduct(6, false);
 console.log(p6);
+
+const p7 = createProduct('', false, 0); // acepta el string vacío y el número 0
+console.log(p7);
