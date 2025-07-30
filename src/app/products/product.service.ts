@@ -36,8 +36,8 @@ export const updateProduct = (id: Product['id'], changes: UpdateProductoDto): Pr
 		throw new Error('Product not found');
 	}
 	products[index] = {
-		...products[index],
-		...changes,
+		...products[index], // se mantienen los valores que ya tenía el producto
+		...changes,  		// se actualizan los valores sobrescribiendo los que ya tenía el producto, por eso los cambios deben ir después de los que ya tenía el producto
 	};
 	return products[index];
 };

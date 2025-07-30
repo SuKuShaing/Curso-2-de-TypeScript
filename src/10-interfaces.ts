@@ -13,7 +13,7 @@ type userId = string | number;
 
 // una interface requiere un cuerpo (con llaves) para definirla
 // las interfaces se pueden extender
-// Las interfaces solo aplican a objetos
+// Las interfaces solo aplican a objetos y los types a cualquier cosa
 interface Product {
     id: string | number;
     title: string;
